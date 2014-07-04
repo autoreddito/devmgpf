@@ -1,18 +1,13 @@
 devgoatse
 =========
 
-(NSFW)
+(VSFW) (V is for very)
 
-Linux Kernel module for creating /dev/goatse character device.
+Linux Kernel module for creating /dev/mgpf character device.
 
-/dev/goatse creates a continue stream of the famous goatse JPG image.
+/dev/mgpf creates a mgpf gif.
 
-This device could be very useful for securely erase disks, in order to troll people looking for data on the disk.
-
-You can use it in a very simple way:
-
-    dd if=/dev/goatse of=/dev/disk-to-erase
-
+This device could be very useful for sbirrinfamia.
     
 Dependencies
 =======
@@ -27,4 +22,4 @@ Installation and use
 =======
 
     make
-    ./goatse_register.sh
+    ./mgpf_register.sh

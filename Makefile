@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-obj-m = goatsedev.o 
+obj-m = mgpfdev.o 
 
 KVERSION = $(shell uname -r)
 

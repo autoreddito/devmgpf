@@ -3,6 +3,9 @@
 *.ko
 *.obj
 *.elf
+*.cmd
+*.symvers
+
 
 # Libraries
 *.lib
@@ -21,3 +24,6 @@
 *.i*86
 *.x86_64
 *.hex
+
+*.gif
+.tmp_versions/*

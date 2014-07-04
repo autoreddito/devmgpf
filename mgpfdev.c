@@ -7,6 +7,7 @@
 #include "figo.h"
 
 extern char to_the_infinity_and_beyond[];
+char *fustagno;
 extern unsigned int to_the_infinity_and_beyond_len;
 
 MODULE_AUTHOR("Autoreddi.to");
@@ -30,35 +31,27 @@ static int device_open(struct inode *inode, struct file *file)
 	return 0;
 }
 
-static int i =0;
+static int i = 0;
 static ssize_t device_read(struct file * file, char * buf, size_t count, loff_t *ppos)
 {
 
 
   /* Number of bytes actually written to the buffer */
   int bytes_read = 0;
-
-  /* If we're at the end of the message, return 0 
-   * (which signifies end of file) */
-  if (*to_the_infinity_and_beyond == 0)
-    return 0;
-
+  if(i == to_the_infinity_and_beyond_len) {i=0; return 0; };
   /* Actually put the data into the buffer */
   while (count && (i<to_the_infinity_and_beyond_len))  {
-
     /* Because the buffer is in the user data segment, 
      * not the kernel data segment, assignment wouldn't 
      * work. Instead, we have to use put_user which 
      * copies data from the kernel data segment to the 
      * user data segment. */
     put_user(*(to_the_infinity_and_beyond+i), buf++);
-
     i++;
     count --;
     bytes_read ++;
     }
   return bytes_read;
-
 
 }
 
